@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Dotify</string>
+    <string name="change_user">change user</string>
+    <string name="first_aavenger">first_avenger</string>
+    <string name="first_avenger">first_avenger</string>
+    <string name="ed_sheeran">Ed Sheeran</string>
+    <string name="_3674_plays">3674 plays</string>
+    <string name="shape_of_you">Shape of You</string>
+    <string name="album_cover_picture">album cover picture</string>
+    <string name="play_button">play button</string>
+    <string name="back_button">back button</string>
+    <string name="next_button">next button</string>
+</resources>

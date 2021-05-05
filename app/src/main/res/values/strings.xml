@@ -10,4 +10,9 @@
     <string name="play_button">play button</string>
     <string name="back_button">back button</string>
     <string name="next_button">next button</string>
+    <string name="name_of_song">Name of song</string>
+    <string name="shuffle_list">Shuffle List</string>
+    <string name="name_of_artist">Name of Artist</string>
+    <string name="currently_playing">Currently Playing</string>
+    <string name="shuffle">shuffle</string>
 </resources>

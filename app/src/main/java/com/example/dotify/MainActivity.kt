@@ -1,13 +1,33 @@
 package com.example.dotify
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity.apply
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.GravityCompat.apply
+import com.example.dotify.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
+
+fun navigateToPlayerScreen(context: Context, currSongName: String, currArtistName: String, currImage: Int) {
+    val intent = Intent(context, MainActivity::class.java)
+
+    val bundle = Bundle().apply{
+        putString("song_name", currSongName)
+        putString("artist_name", currArtistName)
+        putInt("image_id", currImage)
+    }
+    intent.putExtras(bundle)
+    context.startActivity(intent)
+
+}
 
 class MainActivity : AppCompatActivity() {
     private val randomNumber = Random.nextInt(1000, 10000)
@@ -26,6 +46,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //val binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
+
         nextButton = findViewById(R.id.nextButton)
         backButton = findViewById(R.id.backButton)
         playButton = findViewById(R.id.playButton)
@@ -40,6 +62,16 @@ class MainActivity : AppCompatActivity() {
 
         // Setting the initial plays
         plays.text = randomNumber.toString() + " plays"
+
+        // Update screen according to current song
+        val nameOfSong: String? = intent.extras?.getString("song_name")
+        val nameOfArtist: String? = intent.extras?.getString("artist_name")
+        val imgResource: Int? = intent.extras?.getInt("image_id")
+        songName.text = nameOfSong
+        artistName.text = nameOfArtist
+        if (imgResource != null) {
+            albumImage.setImageResource(imgResource)
+        }
 
         // Next Button
         nextButton.setOnClickListener {

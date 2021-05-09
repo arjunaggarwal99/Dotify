@@ -11,7 +11,7 @@ import com.example.dotify.databinding.ItemSongBinding
 
 class SongListAdapter(private var listofSongs: List<Song>): RecyclerView.Adapter<SongListAdapter.SongsViewHolder>() {
 
-    var onSongClickListener: (songName: String, artistName: String, bigImage: Int) -> Unit = { _, _,_ ->  }
+    var onSongClickListener: (song: Song) -> Unit = {_ -> }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongsViewHolder {
         val binding = ItemSongBinding.inflate(LayoutInflater.from(parent.context))
@@ -21,16 +21,17 @@ class SongListAdapter(private var listofSongs: List<Song>): RecyclerView.Adapter
     override fun getItemCount(): Int = listofSongs.size
 
     override fun onBindViewHolder(holder: SongsViewHolder, position: Int) {
-        val songName = listofSongs[position].title
-        val artistName = listofSongs[position].artist
-        val imageID = listofSongs[position].smallImageID
-        val bigImage = listofSongs[position].largeImageID
+        val song = listofSongs[position]
+        val songName = song.title
+        val artistName = song.artist
+        val imageID = song.smallImageID
+
         with(holder.binding) {
             tvTitle.text = songName
             tvArtist.text = artistName
             ivCoverPic.setImageResource(imageID)
             itemRoot.setOnClickListener {
-                onSongClickListener(songName, artistName, bigImage)
+                onSongClickListener(song)
             }
         }
     }

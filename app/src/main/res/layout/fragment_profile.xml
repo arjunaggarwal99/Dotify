@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProfileFragment"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/ivSpiderman"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/spiderman"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/spider_man_image" />
+
+    <TextView
+        android:id="@+id/tvSpiderman"
+        android:text="@string/spider_man"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ivSpiderman"
+        app:layout_constraintStart_toStartOf="@+id/ivSpiderman"
+        app:layout_constraintEnd_toEndOf="@id/ivSpiderman"
+        android:textSize="30sp"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/age_21"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpiderman"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvAge"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/email_spidey_spiderman_com"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvJoined"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/joined_05_08_2021"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/height"
+        app:layout_constraintTop_toBottomOf="@+id/tvJoined"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

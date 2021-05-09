@@ -15,4 +15,21 @@
     <string name="name_of_artist">Name of Artist</string>
     <string name="currently_playing">Currently Playing</string>
     <string name="shuffle">shuffle</string>
+    <string name="settings">settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Profile</string>
+    <string name="profile_statistics">Profile Statistics</string>
+    <string name="about">About</string>
+    <string name="spider_man">Spider-Man</string>
+    <string name="age_21">Age: 21</string>
+    <string name="joined_05_08_2021">Joined: 05/08/2021</string>
+    <string name="email_spidey_spiderman_com">Email: spidey@spiderman.com</string>
+    <string name="spider_man_image">Spider-Man</string>
+    <string name="play_count_4413">Play count: 4413</string>
+    <string name="author_arjun_aggarwal">Author: Arjun Aggarwal</string>
+    <string name="website_arjunaggarwal99_githuib_io">Website: arjunaggarwal99.githuib.io</string>
+    <string name="version_1_0">Version: 1.0</string>
+    <string name="help">Help</string>
+    <string name="height">Height: 5\' 10\"</string>
 </resources>

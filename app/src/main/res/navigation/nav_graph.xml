@@ -41,6 +41,7 @@
         tools:layout="@layout/fragment_statistics" >
         <argument
             android:name="plays"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>

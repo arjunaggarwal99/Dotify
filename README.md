@@ -2,8 +2,11 @@
 
 This app provides a platform where people listen to music on the cloud!
 
+# Documentation
+[Song Data Provider API](https://github.com/echeeUW/SongDataProvider)
+
 ## Extra credit
-I have not completed any extra credit for this Homework.
+I have completed extra credit #1.
 
 ## Screenshots
 <img src="img/rvImage.png" alt="Screenshot of the app" height="500" />

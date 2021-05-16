@@ -21,10 +21,6 @@ class SettingsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentSettingsBinding.inflate(inflater)
 
-        navController.navigate(
-            SettingsFragmentDirections.actionSettingsFragmentToStatisticsFragment(plays = safeArgs.plays)
-        )
-
         with(binding) {
 
             profileButton.setOnClickListener{
@@ -36,7 +32,9 @@ class SettingsFragment : Fragment() {
             }
 
             statsButton.setOnClickListener {
-                navController.navigate(R.id.statisticsFragment)
+                navController.navigate(
+                    SettingsFragmentDirections.actionSettingsFragmentToStatisticsFragment(PLAYSKEY = safeArgs.PLAYSKEY)
+                )
             }
         }
 

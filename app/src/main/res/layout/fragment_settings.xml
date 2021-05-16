@@ -13,23 +13,20 @@
         android:id="@+id/profileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="@string/profile"
-        android:padding="10dp"/>
+        android:padding="20dp"/>
 
     <Button
         android:id="@+id/statsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="@string/profile_statistics"
-        android:padding="10dp"/>
+        android:padding="20dp"/>
 
     <Button
         android:id="@+id/aboutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="@string/about"
-        android:padding="10dp"/>
+        android:padding="20dp"/>
 </LinearLayout>

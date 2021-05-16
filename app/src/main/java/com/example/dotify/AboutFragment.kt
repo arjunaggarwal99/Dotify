@@ -1,5 +1,6 @@
 package com.example.dotify
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,15 +14,16 @@ class AboutFragment : Fragment() {
 
     //private val safeArgs: GroupsFragmentArgs by navArgs()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         (activity as AppCompatActivity).supportActionBar?.title = "About"
         val binding = FragmentAboutBinding.inflate(inflater)
 
         //val numOfGroups: Int = safeArgs.numOfGroups
 
-//        with(binding) {
-//            tvGroupsMsg.text = "${safeArgs.numOfGroups} - my favorite group is: ${safeArgs.favoriteGroup}"
-//        }
+        with(binding) {
+            tvVersion.text = "Version ${BuildConfig.VERSION_NAME}"
+        }
 
         return binding.root
     }

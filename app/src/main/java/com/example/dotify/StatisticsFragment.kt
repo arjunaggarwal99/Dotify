@@ -23,7 +23,7 @@ class StatisticsFragment : Fragment() {
         //val numOfGroups: Int = safeArgs.numOfGroups
 
        with(binding) {
-           tvStatPlays.text = "Play count: ${safeArgs.plays}"
+           tvStatPlays.text = "Play count: ${safeArgs.PLAYSKEY}"
        }
 
         return binding.root

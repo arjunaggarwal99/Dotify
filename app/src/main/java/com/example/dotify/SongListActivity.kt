@@ -2,6 +2,7 @@ package com.example.dotify
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.core.view.marginBottom
@@ -10,6 +11,8 @@ import com.ericchee.songdataprovider.SongDataProvider
 import com.example.dotify.databinding.ActivitySongListBinding
 import kotlinx.android.synthetic.main.activity_song_list.*
 import kotlin.properties.Delegates
+
+const val SELECTED_SONG_KEY = "selected song"
 
 class SongListActivity : AppCompatActivity() {
 
@@ -25,6 +28,16 @@ class SongListActivity : AppCompatActivity() {
         val binding = ActivitySongListBinding.inflate(layoutInflater).apply { setContentView(root) }
         title = "All Songs"
         miniPlayer.isVisible = false
+
+        if (savedInstanceState != null) {
+            with(savedInstanceState) {
+                currSongObj = getParcelable(SELECTED_SONG_KEY)
+                with(binding) {
+                    miniPlayer.visibility = View.VISIBLE
+                    tvPlaying.text = "${currSongObj?.title} - ${currSongObj?.artist}"
+                }
+            }
+        }
 
         with(binding) {
 
@@ -52,8 +65,12 @@ class SongListActivity : AppCompatActivity() {
             miniPlayer.setOnClickListener {
                 //Toast.makeText(this@SongListActivity, "You clicked", Toast.LENGTH_SHORT).show()
                 navigateToPlayerScreen(this@SongListActivity, currSongObj!!)
-
             }
         }
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        val selectedSong: Song = this.currSongObj ?: return
+        outState.putParcelable(SELECTED_SONG_KEY, currSongObj)
+        super.onSaveInstanceState(outState)
     }
 }

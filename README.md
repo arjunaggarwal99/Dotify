@@ -2,7 +2,7 @@
 
 This app provides a platform where people listen to music on the cloud!
 
-# Documentation
+## Documentation
 [Song Data Provider API](https://github.com/echeeUW/SongDataProvider)
 
 ## Extra credit

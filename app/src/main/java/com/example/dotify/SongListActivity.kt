@@ -70,7 +70,7 @@ class SongListActivity : AppCompatActivity() {
     }
     override fun onSaveInstanceState(outState: Bundle) {
         val selectedSong: Song = this.currSongObj ?: return
-        outState.putParcelable(SELECTED_SONG_KEY, currSongObj)
+        outState.putParcelable(SELECTED_SONG_KEY, selectedSong)
         super.onSaveInstanceState(outState)
     }
 }

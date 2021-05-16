@@ -10,7 +10,7 @@ I have completed extra credit #1.
 
 ## Screenshots
 <img src="img/rvImage.png" alt="Screenshot of the app" height="500" />
-<img src="img/mainPage.png" alt="Screenshot of the app" height="500" />
+<img src="img/mainImage.png" alt="Screenshot of the app" height="500" />
 
 
 ## Installation & Usage

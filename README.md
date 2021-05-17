@@ -6,7 +6,10 @@ This app provides a platform where people listen to music on the cloud!
 I have completed extra credit #1, #2 and #4
 
 ## Screenshots
-<img src="img/emulator.png" alt="Screenshot of the app" height="500" />
+Main Player           |  
+:-------------------------:
+<img src="img/emulator.png" alt="Screenshot of the app" height="500" />  
+
 
 
 ## Installation & Usage

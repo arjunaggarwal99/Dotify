@@ -9,8 +9,9 @@ This app provides a platform where people listen to music on the cloud!
 I have completed extra credit #1.
 
 ## Screenshots
-<img src="img/rvImage.png" alt="Screenshot of the app" height="500" />
-<img src="img/mainImage.png" alt="Screenshot of the app" height="500" />
+Song List with Mini Player |  Main Player
+:-------------------------:|:-------------------------:
+<img src="img/rvImage.png" alt="Screenshot of the app" height="500" />  |  <img src="img/mainImage.png" alt="Screenshot of the app" height="500" />
 
 
 ## Installation & Usage

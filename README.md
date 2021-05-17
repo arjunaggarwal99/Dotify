@@ -7,8 +7,8 @@ I have completed extra credit #1, #2 and #4
 
 ## Screenshots
 Main Player           |  
-:-------------------------:
-<img src="img/emulator.png" alt="Screenshot of the app" height="500" />  
+:-------------------------: |
+<img src="img/emulator.png" alt="Screenshot of the app" height="500" />  |
 
 
 

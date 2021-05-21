@@ -21,7 +21,6 @@ class SettingsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentSettingsBinding.inflate(inflater)
 
-        title = "Settings"
         with(binding) {
 
             profileButton.setOnClickListener{

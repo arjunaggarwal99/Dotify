@@ -33,7 +33,7 @@ fun navigateToPlayerScreen(context: Context, song: Song) {
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val randomNumber = Random.nextInt(1000, 10000)
+    private var currValue: Int = Random.nextInt(1000, 10000)
     private lateinit var playButton: ImageButton
     private lateinit var nextButton: ImageButton
     private lateinit var settingsButton: Button
@@ -43,20 +43,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var newId: EditText
     private lateinit var userId: TextView
     private lateinit var plays: TextView
-    private var currValue = randomNumber
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        if (savedInstanceState != null) {
+            with(savedInstanceState) {
+                currValue = getInt(PLAYS_KEY, -1)
+                plays.text = currValue.toString() + " plays"
+            }
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        if (savedInstanceState != null) {
-            currValue = savedInstanceState.getInt(PLAYS_KEY)
-        }
 
         nextButton = findViewById(R.id.nextButton)
         settingsButton = findViewById(R.id.settingsButton)
@@ -66,16 +67,13 @@ class MainActivity : AppCompatActivity() {
         changeButton = findViewById(R.id.changeButton)
         userId = findViewById(R.id.userId)
         newId = findViewById(R.id.newId)
-        plays = findViewById(R.id.plays)
 
         // making the new id edit text invisible when the app loads
         newId.visibility = View.INVISIBLE
 
-        // Setting the initial plays
-        plays.text = randomNumber.toString() + " plays"
-
         // Update screen according to current song
         with(binding) {
+            plays.text = currValue.toString() + " plays"
             val song: Song? = intent.getParcelableExtra<Song>(currSongObj)
             val imgResource: Int? = intent.extras?.getInt("image_id")
             songName.text = song?.title

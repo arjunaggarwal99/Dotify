@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             with(savedInstanceState) {
                 currValue = getInt(PLAYS_KEY, -1)
-                plays.text = currValue.toString() + " plays"
             }
         }
 

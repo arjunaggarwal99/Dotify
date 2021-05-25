@@ -12,7 +12,7 @@ No extra credit attempted
 
 Profile using JSON and Network Requests 
 :-------------------------:|
-<img src="img/profileImage.png" alt="Screenshot of the app" height="500" />  | 
+<img src="img/profileJSON.png" alt="Screenshot of the app" height="500" />  | 
 
 
 ## Installation & Usage

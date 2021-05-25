@@ -19,25 +19,28 @@ class SongListActivity : AppCompatActivity() {
     lateinit var currSongName: String
     lateinit var currArtistName: String
     var currImage by Delegates.notNull<Int>()
-    private var currSongObj: Song? = null
+    private lateinit var DotifyApp: DotifyApplication
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Getting the Dotify Application
+        DotifyApp = (application as DotifyApplication)
+
         val binding = ActivitySongListBinding.inflate(layoutInflater).apply { setContentView(root) }
         title = "All Songs"
         miniPlayer.isVisible = false
 
-        if (savedInstanceState != null) {
-            with(savedInstanceState) {
-                currSongObj = getParcelable(SELECTED_SONG_KEY)
-                with(binding) {
-                    miniPlayer.visibility = View.VISIBLE
-                    tvPlaying.text = "${currSongObj?.title} - ${currSongObj?.artist}"
-                }
-            }
-        }
+//            with(savedInstanceState) {
+//                if (savedInstanceState != null) {
+//                DotifyApp.selectedSong = song
+//                with(binding) {
+//                    miniPlayer.visibility = View.VISIBLE
+//                    tvPlaying.text = "${song?.title} - ${song?.artist}"
+//                }
+//            }
+//        }
 
         with(binding) {
 
@@ -53,7 +56,7 @@ class SongListActivity : AppCompatActivity() {
                 currSongName = song.title
                 currArtistName = song.artist
                 currImage = song.largeImageID
-                currSongObj = song
+                DotifyApp.selectedSong = song
             }
 
             // When clicking on Shuffle button
@@ -64,13 +67,8 @@ class SongListActivity : AppCompatActivity() {
             // When clicking on the mini-player
             miniPlayer.setOnClickListener {
                 //Toast.makeText(this@SongListActivity, "You clicked", Toast.LENGTH_SHORT).show()
-                navigateToPlayerScreen(this@SongListActivity, currSongObj!!)
+                navigateToPlayerScreen(this@SongListActivity)
             }
         }
-    }
-    override fun onSaveInstanceState(outState: Bundle) {
-        val selectedSong: Song = this.currSongObj ?: return
-        outState.putParcelable(SELECTED_SONG_KEY, selectedSong)
-        super.onSaveInstanceState(outState)
     }
 }

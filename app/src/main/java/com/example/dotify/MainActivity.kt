@@ -12,6 +12,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GravityCompat.apply
+import coil.load
 import com.ericchee.songdataprovider.Song
 import com.example.dotify.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,15 +21,9 @@ import kotlin.random.Random
 const val currSongObj = "songObj"
 const val PLAYS_KEY = "PLAYS_KEY"
 
-fun navigateToPlayerScreen(context: Context, song: Song) {
+fun navigateToPlayerScreen(context: Context) {
     val intent = Intent(context, MainActivity::class.java)
-
-    val bundle = Bundle().apply{
-        putParcelable(currSongObj, song)
-    }
-    intent.putExtras(bundle)
     context.startActivity(intent)
-
 }
 
 class MainActivity : AppCompatActivity() {
@@ -51,8 +46,12 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             with(savedInstanceState) {
                 currValue = getInt(PLAYS_KEY, -1)
+                plays.text = currValue.toString() + " plays"
             }
         }
+
+        // Getting the Dotify Application
+        val DotifyApp = (application as DotifyApplication)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
@@ -73,12 +72,12 @@ class MainActivity : AppCompatActivity() {
         // Update screen according to current song
         with(binding) {
             plays.text = currValue.toString() + " plays"
-            val song: Song? = intent.getParcelableExtra<Song>(currSongObj)
-            val imgResource: Int? = intent.extras?.getInt("image_id")
-            songName.text = song?.title
-            artistName.text = song?.artist
-            if (song != null) {
-                albumImage.setImageResource(song.largeImageID)
+            DotifyApp.selectedSong.let { song ->
+                if (song != null) {
+                    songName.text = song.title
+                    artistName.text = song.artist
+                    albumImage.load(song.largeImageID)
+                }
             }
 
             // Play Button
@@ -89,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 
             // Settings Button
             settingsButton.setOnClickListener {
-                navigateToSettingsActivity(this@MainActivity, song, currValue)
+                navigateToSettingsActivity(this@MainActivity, currValue)
             }
 
             // Cover Image

@@ -12,10 +12,9 @@ import com.ericchee.songdataprovider.Song
 import com.example.dotify.databinding.ActivitySettingsBinding
 
 
-fun navigateToSettingsActivity(context: Context, song: Song?, plays: Int) {
+fun navigateToSettingsActivity(context: Context, plays: Int) {
     val intent = Intent(context, SettingsActivity::class.java)
     val bundle = Bundle().apply {
-        putParcelable(currSongObj, song)
         putInt(PLAYS_KEY, plays)
     }
     intent.putExtras(bundle)

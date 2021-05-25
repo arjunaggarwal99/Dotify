@@ -8,7 +8,7 @@
     android:padding="20dp">
 
     <ImageView
-        android:id="@+id/ivSpiderman"
+        android:id="@+id/ivProfile"
         android:layout_width="0dp"
         android:layout_height="300dp"
         app:layout_constraintDimensionRatio="1:1"
@@ -19,51 +19,72 @@
         android:contentDescription="@string/spider_man_image" />
 
     <TextView
-        android:id="@+id/tvSpiderman"
-        android:text="@string/spider_man"
+        android:id="@+id/tvName"
+        android:text="@string/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ivSpiderman"
-        app:layout_constraintStart_toStartOf="@+id/ivSpiderman"
-        app:layout_constraintEnd_toEndOf="@id/ivSpiderman"
+        app:layout_constraintTop_toBottomOf="@id/ivProfile"
+        app:layout_constraintStart_toStartOf="@+id/ivProfile"
+        app:layout_constraintEnd_toEndOf="@id/ivProfile"
         android:textSize="30sp"
         android:layout_marginTop="0dp" />
 
     <TextView
-        android:id="@+id/tvAge"
+        android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/age_21"
-        app:layout_constraintTop_toBottomOf="@+id/tvSpiderman"
+        android:text="@string/username"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tvEmail"
+        android:id="@+id/tvPlatform"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvAge"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/email_spidey_spiderman_com"
+        android:text="@string/platform"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tvJoined"
+        android:id="@+id/tvHasNose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/joined_05_08_2021"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+        android:text="@string/hasNose"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlatform"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tvHeight"
+        android:id="@+id/tvLoadingError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/height"
-        app:layout_constraintTop_toBottomOf="@+id/tvJoined"
+        android:text="@string/loading"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/ivError"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/error_icon"
+        android:scaleType="centerCrop"
+        android:src="@drawable/error"
+        app:layout_constraintBottom_toTopOf="@+id/tvLoadingError"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible">
+    </ImageView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,4 +35,11 @@
     <string name="website_arjunaggarwal99_github_io">Website: arjunaggarwal99.github.io</string>
     <string name="version_2_0">Version: 2.0</string>
     <string name="statistics">Statistics</string>
+    <string name="spidy">spidy</string>
+    <string name="Name">Spider Man</string>
+    <string name="username">Username: spidy</string>
+    <string name="platform">Platform: 8.21</string>
+    <string name="hasNose">Do I have a nose?: true</string>
+    <string name="loading">Loading User Profile data...</string>
+    <string name="error_icon">Error icon</string>
 </resources>

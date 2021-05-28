@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import coil.load
 import com.example.dotify.databinding.FragmentProfileBinding
+import com.example.dotify.manager.FetchUserManager
 import com.example.dotify.repository.DataRepository
 import kotlinx.coroutines.launch
 
@@ -18,6 +19,7 @@ class ProfileFragment : Fragment() {
     private val myApp: DotifyApplication by lazy { requireActivity().application as DotifyApplication }
     private val dataRepository: DataRepository by lazy { myApp.dataRepository }
     private lateinit var binding: FragmentProfileBinding
+    lateinit var fetchUserManager: FetchUserManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         (activity as AppCompatActivity).supportActionBar?.title = "Profile"
@@ -30,6 +32,13 @@ class ProfileFragment : Fragment() {
             tvPlatform.visibility = View.INVISIBLE
             tvHasNose.visibility = View.INVISIBLE
             ivProfile.visibility = View.INVISIBLE
+            fetchButton.setOnCheckedChangeListener{ _, isChecked ->
+                if (isChecked) {
+                    fetchUserManager.getUserPeriodically()
+                } else {
+                    fetchUserManager.stopGetUserPeriodically()
+                }
+            }
         }
 
         loadUserData()

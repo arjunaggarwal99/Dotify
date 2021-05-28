@@ -86,5 +86,16 @@
         android:visibility="invisible">
     </ImageView>
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/fetchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:switchPadding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHasNose"
+        android:layout_marginTop="50dp"
+        android:text="@string/fetch_data"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

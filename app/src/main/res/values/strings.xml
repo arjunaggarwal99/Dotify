@@ -42,4 +42,5 @@
     <string name="hasNose">Do I have a nose?: true</string>
     <string name="loading">Loading User Profile data...</string>
     <string name="error_icon">Error icon</string>
+    <string name="fetch_data">Fetch Data</string>
 </resources>

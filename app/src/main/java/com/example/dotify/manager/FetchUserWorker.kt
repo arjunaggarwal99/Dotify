@@ -5,16 +5,26 @@ import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.example.dotify.DotifyApplication
+import java.lang.Exception
 
-class FetchUserWorker(context: Context, workerParams: WorkerParameters):
+class FetchUserWorker(
+    private val context: Context, workerParams: WorkerParameters):
 CoroutineWorker(context, workerParams) {
 
     private val myApp by lazy { context.applicationContext as DotifyApplication }
+    private val dataRepository by lazy { myApp.dataRepository }
+    private val fetchUserManager by lazy { myApp.fetchUserManager }
 
     override suspend fun doWork(): Result {
         Log.i("FetchUserManager", "fetching user now")
-
-        return Result.success()
+        return try {
+            val user = dataRepository.getUser()
+            fetchUserManager.updateUser(user)
+            Log.i("HTTP", "Fetching user using HTTP Request")
+            Result.success()
+        } catch (ex: Exception) {
+            Result.failure()
+        }
     }
 
 }

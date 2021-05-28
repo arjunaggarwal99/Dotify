@@ -19,7 +19,7 @@ class ProfileFragment : Fragment() {
     private val myApp: DotifyApplication by lazy { requireActivity().application as DotifyApplication }
     private val dataRepository: DataRepository by lazy { myApp.dataRepository }
     private lateinit var binding: FragmentProfileBinding
-    lateinit var fetchUserManager: FetchUserManager
+    private val fetchUserManager: FetchUserManager by lazy { myApp.fetchUserManager }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         (activity as AppCompatActivity).supportActionBar?.title = "Profile"

@@ -10,9 +10,9 @@ I have attempted Extra Credit #1 and #2.
 
 ## Screenshots
 
-Profile using JSON and Network Requests 
-:-------------------------:|
-<img src="img/profileJSON.png" alt="Screenshot of the app" height="500" />  | 
+Profile Page with Toggle Button to fetch data | Notification after the data is fetched
+:-------------------------:|:-------------------------:|
+<img src="img/toggle.png" alt="Screenshot of the app" height="500" />  | <img src="img/notificaton.png" alt="Screenshot of the app" height="500" />
 
 
 ## Installation & Usage

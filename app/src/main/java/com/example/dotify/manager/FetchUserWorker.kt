@@ -87,6 +87,9 @@ CoroutineWorker(context, workerParams) {
 
         val intent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+            // Passing the song data to the activity to show the song in the player
+            myApp.selectedSong = randomSong
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
 

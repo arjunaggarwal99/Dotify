@@ -10,7 +10,7 @@ I have attempted Extra Credit #1 and #2.
 
 ## Screenshots
 
-Profile Page with Toggle Button to fetch data | Notification after the data is fetched | Hello
+Profile Page with Toggle Button to fetch data | Notification after the data is fetched | Song Player on Notification tap
 :-------------------------:|:-------------------------:|:-------------------------:|
 <img src="img/toggle.png" alt="Screenshot of the app" height="500" />  | <img src="img/notification.png" alt="Screenshot of the app" height="500" /> | <img src="img/newActivity.png" alt="Screenshot of the app" height="500" />
 

@@ -53,6 +53,29 @@ class FetchUserManager(context: Context) {
 
     }
 
+    // Separate alternative work request that runs every 2 days when
+    // the device’s battery is not too low and is connected to a network
+    fun getUserPeriodicLong() {
+
+        // preventing double running
+        if(isFetchingUser()) {
+            return
+        }
+
+        val request = PeriodicWorkRequestBuilder<FetchUserWorker>(2, TimeUnit.DAYS)
+            .setConstraints(
+                Constraints.Builder()
+                    .setRequiredNetworkType(NetworkType.CONNECTED)
+                    .setRequiresBatteryNotLow(true)
+                    .build()
+            )
+            .addTag(FETCH_USER_TAG)
+            .build()
+
+        workManager.enqueue(request)
+
+    }
+
     // Stop Refresh
     fun stopGetUserPeriodically() {
         workManager.cancelAllWorkByTag(FETCH_USER_TAG)

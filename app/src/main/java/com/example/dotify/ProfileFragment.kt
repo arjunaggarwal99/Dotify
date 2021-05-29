@@ -34,7 +34,7 @@ class ProfileFragment : Fragment() {
             ivProfile.visibility = View.INVISIBLE
             fetchButton.setOnCheckedChangeListener{ _, isChecked ->
                 if (isChecked) {
-                    fetchUserManager.getUser()
+                    fetchUserManager.getUserPeriodically()
                 } else {
                     fetchUserManager.stopGetUserPeriodically()
                 }

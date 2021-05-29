@@ -6,7 +6,7 @@ This app provides a platform where people listen to music on the cloud!
 [Song Data Provider API](https://github.com/echeeUW/SongDataProvider)
 
 ## Extra credit
-No extra credit attempted
+I have attempted Extra Credit #1 and #2.
 
 ## Screenshots
 

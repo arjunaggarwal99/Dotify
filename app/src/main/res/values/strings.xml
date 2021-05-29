@@ -43,4 +43,6 @@
     <string name="loading">Loading User Profile data...</string>
     <string name="error_icon">Error icon</string>
     <string name="fetch_data">Fetch Data</string>
+    <string name="new_uploaded_music">New Uploaded Music</string>
+    <string name="new_song_channel_description">This is a channel that notifies when you have a new song released</string>
 </resources>
